@@ -53,9 +53,9 @@ class App extends Component {
               </div>
             </div>
             <div className="screen-side">
-              <TrumpImage/>
+              <TrumpImage loading={!this.state.quoteVisible}/>
               <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={this.state.quoteVisible}>
-                <TrumpTweet currentQuote={this.state.currentQuote}/>
+                <TrumpTweet currentQuote={this.state.currentQuote} />
               </Animated>
             </div>
           </div>

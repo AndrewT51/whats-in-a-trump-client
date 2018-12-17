@@ -18,6 +18,7 @@ const menuStyle = {
   padding: '2px 0',
   fontSize: '70%',
   position: 'fixed',
+  zIndex: 100,
   overflow: 'auto',
   maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
 }
@@ -69,7 +70,7 @@ class AppForm extends Component {
 
   renderItem (item, isHighlighted) {
     return (
-      <div key={item}>{item}</div>
+      <div key={item} style={{padding: '5px', fontSize: '1.2em'}}>{item}</div>
     )
   }
 

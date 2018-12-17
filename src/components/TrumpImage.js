@@ -1,25 +1,30 @@
 import './TrumpImage.css'
 import React, { Component } from 'react';
-import trump1 from '../images/trump1.gif'
 import trump2 from '../images/trump2.gif'
+import GifPlayer from 'react-gif-player'
+
 
 class TrumpImage extends Component {
-  componentWillMount() {
-    console.log('hello:')
-    // window.onload = function() {
-    //   Gifffer();
-    // }
+  constructor (props) {
+    super(props)
+    this.imageRef = React.createRef()
+    this.imageContainerRef = React.createRef()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if( this.props.loading === this.imageRef.current.state.playing) {
+      this.imageContainerRef.current.children[0].click()
+    }
   }
 
   render(){
     return (
-      <div>
-        <img src={trump2} alt="loading" style={{borderRadius: '50%', overflow: 'hidden'}}/>
+      <div ref={this.imageContainerRef} onClick={() => console.log('hello:')}>
+        <GifPlayer gif={trump2} style={{width: '300px', height: '300px'}} ref={this.imageRef}/>
       </div>
     )
   }
 }
-        // <img data-giffer={trump1} width="100px" height="100px" alt="trump"/>
-        // <div style={{backgroundImage: `url('${trump2}')`, width: '300px', height: '300px'}} />
+
 
 export default TrumpImage
