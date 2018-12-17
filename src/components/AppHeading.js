@@ -1,11 +1,15 @@
+import './AppHeading.css'
 import React, { Component } from 'react'
+import {Animated} from "react-animated-css"
 
 export default class AppHeading extends Component {
   render() {
     return (
-      <div style={{marginBottom: '30px'}}>
-        <h1>What's in a Trump?</h1>
-      </div>
+      <Animated animationIn="bounceInLeft" isVisible={true}>
+        <div className="heading-wrapper">
+          <h1 className="heading">What's in a Trump?</h1>
+        </div>
+      </Animated>
     )
   }
 }
