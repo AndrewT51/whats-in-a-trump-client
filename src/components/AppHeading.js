@@ -1,8 +1,8 @@
 import './AppHeading.css'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import {Animated} from "react-animated-css"
 
-export default class AppHeading extends Component {
+export default class AppHeading extends PureComponent {
   render() {
     return (
       <Animated animationIn="bounceInLeft" isVisible={true}>
