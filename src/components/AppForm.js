@@ -51,7 +51,6 @@ class AppForm extends Component {
 
   async handleSearch () {
     if (this.state.value === '') return
-    this.setState({value: ''})
     try {
       let {data} = await axios.get(`http://localhost:7832/quote/${this.state.value}`)
       this.setState({quotes: data})
@@ -64,6 +63,7 @@ class AppForm extends Component {
   }
 
   async handleRandom () {
+    this.setState({value: ''})
     let {data} = await axios.get('http://localhost:7832/random')
     this.props.setCurrentQuote(data)
   }
